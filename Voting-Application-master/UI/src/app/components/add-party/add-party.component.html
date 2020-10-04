@@ -1,0 +1,35 @@
+<app-header [show]="true"></app-header>
+<nav mat-tab-nav-bar>
+    <a mat-tab-link  routerLink="/admin" routerLinkActive #rla="routerLinkActive" [active]="false">
+      Admin Home
+    </a>
+    <a mat-tab-link  routerLink="/addCandidate" routerLinkActive #rla="routerLinkActive" [active]="false">
+        Add Candidate
+    </a>
+    <a mat-tab-link  routerLink="/addParty" routerLinkActive #rla="routerLinkActive" [active]="true">
+        Add Party
+    </a>
+    <a mat-tab-link  routerLink="/addVoter" routerLinkActive #rla="routerLinkActive" [active]="false">
+        Add Voter
+    </a>
+  </nav>
+    <mat-card class="form">
+        <h4>Enter the details of the new party contesting in the election</h4>
+    <form [formGroup]="partyForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="full-width">
+            <mat-label>Party Name</mat-label>
+            <input matInput placeholder="Enter the party name" formControlName="partyId">
+        </mat-form-field>
+        <br><br>
+        <mat-label>
+            Upload party symbol image: 
+        </mat-label>
+            <input type="file" accept=".jpg,.jpeg,.png" (change)="onFileChanged($event)">
+        <br><br>
+        <!-- <mat-form-field class="full-width">
+            <mat-label>Party Icon URL</mat-label>
+            <input matInput placeholder="Enter the party symbol URL" formControlName="partySymbol">
+        </mat-form-field> -->
+        <button mat-raised-button color="primary" type="submit" [disabled]="partyForm.invalid || selectedFile==null">Add Party</button>
+    </form>
+    </mat-card>

@@ -1,0 +1,80 @@
+.header{
+    width: 70%;
+    height: 10%;
+    position: relative;
+    left:12%;
+    top: 10%;
+    background-color: #eeeeee;
+}
+
+.cards{
+    width: 70%;
+    height: 10%;
+    position: relative;
+    left:12%;
+    top: 10%;
+}
+.vote-card{
+    height:90%;
+    width: 90%;
+    background-color: lightblue;
+}
+
+.center{
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+.large{
+    width: 16vh;
+    height: 16vh;
+    font-size: xx-large;
+    color: white;
+    background-color: green;
+}
+
+.notif{
+    width: 60%;
+    position: absolute;
+    top: 45%;
+    left: 18%;
+    text-align: center;
+    display: inline-block;
+    font-size: large;
+    background-color: #eeeeee;
+}
+
+.imp{
+    color:red;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.heading{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.one{
+    float: left;
+    width: 50%;
+    height: 90%;
+}
+
+.two{
+    float: right;
+    width: 50%;
+    height:90%;
+}
+
+.final{
+    width: 60%;
+    position: absolute;
+    top: 35%;
+    left: 18%;
+    text-align: center;
+    display: inline-block;
+    font-size: large;
+    background-color: #eeeeee;
+}

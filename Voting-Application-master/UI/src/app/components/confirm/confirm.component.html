@@ -1,0 +1,15 @@
+<div mat-dialog-content>
+    <mat-icon aria-hidden="false">warning</mat-icon>
+    <p>
+        You are about to cast your vote for: <br><br>
+        <span class="center">
+            Candidate Name: <b>{{data.candidate}} </b><br>
+            Party Name: <b>{{data.party}} </b><br><br>
+        </span>
+        What do you wish to do? <br>
+    </p>
+  </div>
+  <div mat-dialog-actions class="center">
+    <button mat-raised-button color="warn" class="large" [mat-dialog-close]="false" >Cancel</button>
+    <button mat-raised-button color="primary" class="large" [mat-dialog-close]="true" cdkFocusInitial>Confirm Vote</button>
+  </div>

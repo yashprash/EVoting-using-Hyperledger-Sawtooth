@@ -1,0 +1,36 @@
+<app-header [show]="true"></app-header>
+<nav mat-tab-nav-bar>
+    <a mat-tab-link  routerLink="/admin" routerLinkActive #rla="routerLinkActive" [active]="false">
+      Admin Home
+    </a>
+    <a mat-tab-link  routerLink="/addCandidate" routerLinkActive #rla="routerLinkActive" [active]="false">
+        Add Candidate
+    </a>
+    <a mat-tab-link  routerLink="/addParty" routerLinkActive #rla="routerLinkActive" [active]="false">
+        Add Party
+    </a>
+    <a mat-tab-link  routerLink="/addVoter" routerLinkActive #rla="routerLinkActive" [active]="true">
+        Add Voter
+    </a>
+  </nav>
+    <mat-card class="form">
+      <h4>Enter the details of the new voter, post manual verification of eligibility</h4>
+    <form [formGroup]="voterForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="full-width">
+            <mat-label>Voter ID</mat-label>
+            <input matInput placeholder="Enter voter ID" formControlName="voterId">
+        </mat-form-field>
+        <br><br>
+        <mat-form-field class="full-width">
+            <mat-label>Select voter's constituency code: </mat-label>
+            <mat-select formControlName="constituencyId">
+              <mat-option *ngFor="let code of codes" [value]="code.constituencyId">
+                {{code.constituencyId}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <p style="font-size:12px ; color:red;">12 character voter password will be automatically generated</p>
+        <br>
+        <button mat-raised-button color="primary" type="submit" [disabled]="voterForm.invalid">Add Voter</button>
+    </form>
+    </mat-card>

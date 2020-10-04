@@ -1,0 +1,17 @@
+.title{
+    font-family: "Montserrat";
+    position: relative;
+    top: 21%;
+    left: 10%;
+      font-size: xx-large;
+}
+
+mat-icon{
+    /* width: 100%;
+    height: 100%; */
+    font-size:8vh;
+}
+
+.large{
+    font-size: large;
+}

@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.green-snackbar{
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+
+.red-snackbar{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+.mat-grid-tile .mat-figure {
+    align-items: initial !important;
+}
+

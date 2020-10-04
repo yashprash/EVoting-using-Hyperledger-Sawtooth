@@ -1,0 +1,11 @@
+.form{
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    width: 30%;
+    background-color: #eeeeee;
+}
+
+.full-width{
+    width: 100%;
+}

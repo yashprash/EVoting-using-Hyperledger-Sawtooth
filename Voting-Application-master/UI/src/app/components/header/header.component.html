@@ -1,0 +1,14 @@
+<mat-card class="header">
+    <mat-grid-list cols="10" rowHeight="5:2">
+        <mat-grid-tile>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3">
+            <mat-icon aria-hidden="false">how_to_vote</mat-icon> 
+            <span class="title"> E-Voting Portal</span>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="5"></mat-grid-tile>
+        <mat-grid-tile *ngIf="show==true">
+            <button mat-raised-button color="primary" class="large" (click)="logout()">Logout</button>
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-card>

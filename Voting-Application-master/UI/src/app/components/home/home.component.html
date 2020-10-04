@@ -1,0 +1,16 @@
+<app-header [show]="false"></app-header>
+    <mat-card class="form">
+    <form [formGroup]="loginForm"  (ngSubmit)="onSubmit()">
+      <!-- <span class="imp">Welcome</span> -->
+        <mat-form-field class="full-width">
+            <mat-label>Voter ID</mat-label>
+            <input matInput placeholder="Enter your issued voter ID" formControlName="voterId">
+          </mat-form-field>
+          <br><br>
+          <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Enter your password" formControlName="password" type="password">
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+    </mat-card>

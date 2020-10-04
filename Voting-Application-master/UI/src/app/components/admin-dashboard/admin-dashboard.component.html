@@ -1,0 +1,131 @@
+<app-header [show]="true"></app-header>
+<div *ngIf="electionStatus==-1">
+    <mat-card class="form">
+        <form [formGroup]="launchForm" (ngSubmit)="launchElection()">
+            <mat-form-field class="full-width">
+                <mat-label>Election Name</mat-label>
+                <input matInput placeholder="Enter election name" formControlName="electionId">
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary" type="submit" [disabled]="launchForm.invalid">Launch Election</button>
+        </form>
+    </mat-card>
+</div>
+<div *ngIf="electionStatus==0">
+    <mat-grid-list cols="15" rowHeight="3:8">
+        <br><br>
+        <mat-grid-tile></mat-grid-tile>
+        <a routerLink="/addParty">
+            <mat-grid-tile colspan="5" class="tile">
+                <!-- <mat-card> -->
+                    <p class="center">
+                    <mat-icon aria-hidden="false">supervised_user_circle</mat-icon><br>
+                    <span class="align">Add Party</span>
+                    </p>
+                <!-- </mat-card> -->
+            </mat-grid-tile>
+        </a>
+        <mat-grid-tile colspan="2"></mat-grid-tile>
+        <a routerLink="/addCandidate">
+            <mat-grid-tile colspan="5" class="tile">
+                <!-- <mat-card class="full-size"> -->
+                    <p class="center">
+                    <mat-icon aria-hidden="false">how_to_reg</mat-icon><br>
+                    <span class="align">Add Candidate</span>
+                    </p>
+                <!-- </mat-card> -->
+            </mat-grid-tile>
+        </a>
+        <mat-grid-tile colspan="2"></mat-grid-tile>
+        <br><br>
+        <mat-grid-tile></mat-grid-tile>
+        <a routerLink="/addVoter">
+            <mat-grid-tile colspan="5" class="tile">
+                <!-- <mat-card class="full-size"> -->
+                    <p class="center">
+                    <mat-icon aria-hidden="false" >pan_tool</mat-icon><br>
+                    <span class="align">Add Voter</span>
+                    </p>
+                <!-- </mat-card> -->
+            </mat-grid-tile>
+        </a>
+        <mat-grid-tile colspan="2"></mat-grid-tile>
+        <mat-grid-tile class="tile" colspan="5">
+            <p>
+                To load all the required data into the blockchain prior to the election, please click here:  
+                <button mat-raised-button color="primary" (click)="move()">Move To Blockchain</button>
+                <br><br><br>
+                To start the election, please click here: 
+                <button mat-raised-button color="primary" (click)="startElection()">Start Election</button>
+            </p>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+<div *ngIf="electionStatus==1">
+    <mat-card class="notif">
+        <p>
+            <span class="imp">Election in progress </span><br><br>
+            This is not a live election! Results will only be available after the end of the election.<br><br>
+            <!-- Live Vote Count: {{voteCount}} 
+            <button mat-icon-button (click)="refreshVoteCount()">
+                <mat-icon class="small">refresh</mat-icon>
+              </button> -->
+              <br><br><br>
+            To stop the election, please click here: <br><br>
+            <button mat-raised-button color="primary" (click)="stopElection()">Stop Election</button>
+        </p>
+    </mat-card>
+</div>
+<div *ngIf="electionStatus==2">
+    <mat-card class="notif">
+        <mat-card-title class="full">
+            Here are the detailed results: <br><br><br>
+            <div class="one">
+                    <span class="heading">Results By Constituency:</span><br><br>
+                    <!-- <div *ngFor="let item of resultsByConst | keyvalue">
+                        {{item.key}}: {{item.value}}
+                    </div> -->
+                    <div class="mat-table">
+                        <div class="mat-header-row">
+                            <div class="mat-header-cell">Constituency</div>
+                            <div class="mat-header-cell">Winning Party</div>
+                        </div>
+                        <div *ngFor="let item of resultsByConst | keyvalue" class="mat-row">
+                            <div class="mat-cell">{{item.key}}</div> 
+                            <div class="mat-cell">{{item.value}}</div> 
+                        </div>
+                    </div>
+                    <!-- <mat-table>
+                        <mat-header-row>
+                          <mat-header-cell>Constituency</mat-header-cell>
+                          <mat-header-cell>Winning Party</mat-header-cell>
+                        </mat-header-row>
+                        <mat-row *ngFor="let item of resultsByConst|keyvalue">
+                          <mat-cell>{{item.key}}</mat-cell>
+                          <mat-cell>{{item.value}}</mat-cell>
+                        </mat-row>
+                      </mat-table> -->
+            </div>
+            <div class="two">
+                    <span class="heading">Results By Party:</span><br><br>
+                    <div class="mat-table">
+                        <div class="mat-header-row">
+                            <div class="mat-header-cell">Party</div>
+                            <div class="mat-header-cell">Number of Constituencies Won</div>
+                        </div>
+                        <div *ngFor="let item of resultsByParty | keyvalue" class="mat-row">
+                            <div class="mat-cell">{{item.key}}</div> 
+                            <div class="mat-cell">{{item.value}} seats</div> 
+                        </div>
+                    </div>
+                    <!-- <div *ngFor="let item of resultsByParty | keyvalue">
+                        {{item.key}}: {{item.value}} seats
+                    </div>  -->
+            </div>
+        </mat-card-title>
+    </mat-card>
+    <mat-card class="final">
+        <span class="heading">Winning Party (Most Number of Votes): </span>
+        <span class="imp">{{winner}}</span>
+    </mat-card>
+</div>

@@ -1,0 +1,19 @@
+.form{
+    position: absolute;
+    top: 35%;
+    left: 38%;
+    width: 20%;
+    background-color: #eeeeee;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.imp{
+    color:red;
+    font-size: medium;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}

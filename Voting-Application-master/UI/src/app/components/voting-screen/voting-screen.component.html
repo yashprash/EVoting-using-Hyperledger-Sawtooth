@@ -1,0 +1,69 @@
+<app-header [show]="true"></app-header>
+<br><br>
+<mat-card class="header">
+    <mat-card-title>
+        <mat-grid-list cols="4" rowHeight="2:1">
+            <mat-grid-tile colspan="2">
+                <span *ngIf="electionStatus=='0'">Welcome {{voterId}}! <br> Please wait for the scheduled start of the election</span>
+                <span *ngIf="electionStatus=='1' && votedStatus=='0'">Welcome {{voterId}}! <br> Your vote matters. Please vote responsibly</span>
+                <span *ngIf="(electionStatus=='1' && votedStatus=='1') || electionStatus=='2'">Welcome {{voterId}}! </span>
+            </mat-grid-tile>
+            <mat-grid-tile></mat-grid-tile>
+            <mat-grid-tile>
+                {{constituencyId}} Constituency
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-title>
+</mat-card>
+<br><br>
+<div *ngIf="electionStatus=='0' || (electionStatus=='1' && votedStatus=='0')">
+    <mat-grid-list cols="3" rowHeight="1:1" class="cards">
+        <div *ngFor="let cand of candidates">
+            <mat-grid-tile>
+                <mat-card class="vote-card">
+                    <mat-card-title class="center" >
+                        {{cand.candidateId}}<br>
+                        {{cand.partyId}}<br><br>
+                        <img [src]="cand.partySymbol" width="100" height="100"><br>
+                        <button *ngIf="electionStatus==1 && votedStatus==0" mat-fab class="large" (click)="vote(cand.candidateId, cand.partyId)">VOTE</button>
+                    </mat-card-title>
+                    <mat-card-content>
+                        
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+        </div>
+    </mat-grid-list>
+</div>
+<div *ngIf="electionStatus=='1' && votedStatus=='1'">
+    <mat-card class="header">
+        <mat-card-title class="center">
+            Your vote has been recorded. <br>
+            Thank you for voting and fulfilling your responsibility as a citizen. 
+        </mat-card-title>
+    </mat-card>
+</div>
+<div *ngIf="electionStatus=='2'">
+    <mat-card class="notif">
+        <mat-card-title class="full">
+            Here are the detailed results: <br><br><br>
+            <div class="one">
+                    <span class="heading">Results By Constituency:</span><br><br>
+                    <div *ngFor="let item of resultsByConst | keyvalue">
+                        {{item.key}}: {{item.value}}
+                    </div>
+            </div>
+            <div class="two">
+                    <span class="heading">Results By Party:</span><br><br>
+                    <div *ngFor="let item of resultsByParty | keyvalue">
+                        {{item.key}}: {{item.value}} seats
+                    </div> 
+            </div>
+        </mat-card-title>
+    </mat-card>
+    <mat-card class="final">
+        <span class="heading">Winning Party (Most Number of Votes): </span>
+        <span class="imp">{{winner}}</span>
+    </mat-card>
+</div>
+
