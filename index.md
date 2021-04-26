@@ -4,7 +4,8 @@
 
 ### IEEE Research Papers Published on the Topic:
 
-[E-Voting Systems using Blockchain: An Exploratory Literature Survey] (https://ieeexplore.ieee.org/document/9183185) - Presented at the 2nd International Conference on Inventive Research in Computing Applications (ICIRCA 2020), Coimbatore, India.
+[E-Voting Systems using Blockchain: An Exploratory Literature Survey](https://ieeexplore.ieee.org/document/9183185) - Presented at the 2nd International Conference on Inventive Research in Computing Applications (ICIRCA 2020), Coimbatore, India.
+
 [E-Voting System using Hyperledger Sawtooth](https://ieeexplore.ieee.org/document/9212945) - Presented at the 2020 InternationalConference on Advances in Computing, Communication & Materials (ICACCM 2020), Dehradun, India
 
 ### Technology Stack
