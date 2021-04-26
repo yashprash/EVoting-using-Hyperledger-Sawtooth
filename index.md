@@ -19,7 +19,7 @@ Restricted access of the system through election polling stations in the propose
 
 ### High-Level Design
 
-![1](https://images.app.goo.gl/4MU22ibS9eD4GzCN9)
+![1](/1.png)
  
 ### Application
 A prototype for the e-voting system has been developed using Angular 8 as the front-end framework, Node.js as the back-end framework for database operations on Amazon RDS, and Sawtooth blockchain functionalities implemented using Python with the APIs for the functionalities made using Python Flask. The various Sawtooth processes were run using the Docker technology, in several docker containers. In addition, the entire implementation was hosted on Amazon Web Services (AWS), with the Angular front-end application hosted in an AWS S3 bucket, and the Node.js back-end and docker containing Sawtooth processes hosted in an AWS EC2 container. The performance testing of the system showed average processing time per vote request for 500 concurrent vote requests to be around 25 seconds, with a deviation of 10 seconds.
