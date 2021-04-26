@@ -18,7 +18,6 @@ E-Voting or electronic voting is a modern alternative for the traditional voting
 Restricted access of the system through election polling stations in the proposed design allows voters to cast their votes, which are directly recorded in the blockchain state, thus instilling confidence in the voters regarding the fairness and reliability of the election procedure. Moreover, the e-voting system proposed using Hyperledger Sawtooth guarantees security, reliability, decentralized storage and dependability through inherent mechanisms of a permissioned blockchain network and asymmetric key encrypted transfer of vote information. Furthermore, anonymity is ensured through distinct addressing manners of voter information and candidates' vote information to ensure no correlation between the voters and their votes. In addition, the proposed system provides public and individual verifiability of the election by voters and administrator, fairness through unavailability of live election results, and high speed and scalability due to Sawtooth's support for parallel processing of transactions.
 
 ### High-Level Design
-
 ![1](/1.png)
  
 ### Application
