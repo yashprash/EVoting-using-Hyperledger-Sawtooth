@@ -1,37 +1,23 @@
-## Welcome to GitHub Pages
+# E-Voting System using Hyperledger Sawtooth
 
-You can use the [editor on GitHub](https://github.com/yashprash/EVoting-using-Hyperledger-Sawtooth/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+#### Click [here](https://drive.google.com/file/d/1zCZFTxKIla3KC8rEZiqaYlag_rZ-40Pe/view) for a video presentation on the topic
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### IEEE Research Papers Published on the Topic:
 
-### Markdown
+[E-Voting Systems using Blockchain: An Exploratory Literature Survey] (https://ieeexplore.ieee.org/document/9183185) - Presented at the 2nd International Conference on Inventive Research in Computing Applications (ICIRCA 2020), Coimbatore, India.
+[E-Voting System using Hyperledger Sawtooth](https://ieeexplore.ieee.org/document/9212945) - Presented at the 2020 InternationalConference on Advances in Computing, Communication & Materials (ICACCM 2020), Dehradun, India
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Technology Stack
+Angular 8, Node.js, Python, Hyperledger Sawtooth, Docker, AWS
 
-```markdown
-Syntax highlighted code block
+### Introduction
+E-Voting or electronic voting is a modern alternative for the traditional voting system involving paper ballots. E-voting system designs proposed contain cryptographic methods and processes to safeguard and secure the information of the votes being cast. Though encryption of votes increases security of the system and of the information transferred, it is not enough to guarantee complete anonymity of the votes and reliability of the election process. For instance, if the secret key used in the encryption process is compromised or manipulated by the third party conducting the elections, the entire system fails and is no longer secure. Altering the design of the basic electronic-voting system to utilize blockchain technology improves reliability of the system by employing a more secure recording process of vote transactions than a centralized database. Moreover, the Hyperledger Sawtooth framework allows transactions to be grouped together and performed in batches, by parallel execution of the transactions. This feature is very powerful and beneficial for an e-voting system, as it increases the speed of vote processing as well as the scalability of the system, for large-scale voting implementation scenarios.
 
-# Header 1
-## Header 2
-### Header 3
+### Description
+Restricted access of the system through election polling stations in the proposed design allows voters to cast their votes, which are directly recorded in the blockchain state, thus instilling confidence in the voters regarding the fairness and reliability of the election procedure. Moreover, the e-voting system proposed using Hyperledger Sawtooth guarantees security, reliability, decentralized storage and dependability through inherent mechanisms of a permissioned blockchain network and asymmetric key encrypted transfer of vote information. Furthermore, anonymity is ensured through distinct addressing manners of voter information and candidates' vote information to ensure no correlation between the voters and their votes. In addition, the proposed system provides public and individual verifiability of the election by voters and administrator, fairness through unavailability of live election results, and high speed and scalability due to Sawtooth's support for parallel processing of transactions.
 
-- Bulleted
-- List
+### High-Level Design
+ 
+### Application
+A prototype for the e-voting system has been developed using Angular 8 as the front-end framework, Node.js as the back-end framework for database operations on Amazon RDS, and Sawtooth blockchain functionalities implemented using Python with the APIs for the functionalities made using Python Flask. The various Sawtooth processes were run using the Docker technology, in several docker containers. In addition, the entire implementation was hosted on Amazon Web Services (AWS), with the Angular front-end application hosted in an AWS S3 bucket, and the Node.js back-end and docker containing Sawtooth processes hosted in an AWS EC2 container. The performance testing of the system showed average processing time per vote request for 500 concurrent vote requests to be around 25 seconds, with a deviation of 10 seconds.
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/yashprash/EVoting-using-Hyperledger-Sawtooth/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
